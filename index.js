@@ -103,6 +103,8 @@ app.use('/resturant/reserve', ReserveRoute);
 
 
 // Server Call
-app.listen(5000, () =>{
-    console.log("Server up and running at port 5000...Happy Coding !!");
-})
+// app.listen(5000, () =>{
+//     console.log("Server up and running at port 5000...Happy Coding !!");
+// })
+
+app.listen(process.env.PORT || 5000);
