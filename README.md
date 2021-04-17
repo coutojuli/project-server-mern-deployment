@@ -1,7 +1,7 @@
 ## Name           :  Rankit Goyal
 ## Student Number :  N01351517
 #  💻 How to run te Project?
-    cd rest-api-jwt-auth/server
+    cd server
     nodemon index.js
     or
     node index.js
@@ -25,13 +25,13 @@
     [✓]  Admin can active and deactive the Users.
 
     Routes used for admin access:
-   -> http://localhost:5000/restaurant/admin/register
+   -> https://mernproject-app.herokuapp.com/restaurant/admin/register
    
-   -> http://localhost:5000/restaurant/admin/login
+   -> https://mernproject-app.herokuapp.com/restaurant/admin/login
    
-   -> http://localhost:5000/restaurant/admin/reset-password
+   -> https://mernproject-app.herokuapp.com/restaurant/admin/reset-password
    
-   -> http://localhost:5000/restaurant/admin/status
+   -> https://mernproject-app.herokuapp.com/restaurant/admin/status
 
 
 ##  USER ROUTES
@@ -44,18 +44,18 @@
     
 
     Routes used for Users access:
-   -> http://localhost:5000/restaurant/user/register
+   -> https://mernproject-app.herokuapp.com/restaurant/user/register
    
-   -> http://localhost:5000/restaurant/user/login
+   -> https://mernproject-app.herokuapp.com/restaurant/user/login
    
-   -> http://localhost:5000/restaurant/user/edit-profile
+   -> https://mernproject-app.herokuapp.com/restaurant/user/edit-profile
    
-   -> http://localhost:5000/restaurant/user/reset-password
+   -> https://mernproject-app.herokuapp.com/restaurant/user/reset-password
    
-   -> http://localhost:5000/restaurant/user/profile
+   -> https://mernproject-app.herokuapp.com/restaurant/user/profile
 
 ##  FAQ ROUTES
-   -> http://localhost:5000/restaurant/user/faq 
+   -> https://mernproject-app.herokuapp.com/restaurant/user/faq 
 
 
 ## Implementation 
@@ -82,11 +82,11 @@ ID values provided as an example. To execute those APIS first insert a cart, inv
 ## Tasks
 - [x] Order Module: 
   - [x] 1. Cart API created to handle cart CRUD actions.
-  - [x] Read all: http://localhost:5000/api/cart - GET
-    - [x] Read details: http://localhost:5000/api/cart/605646eb4a739473ecb699d9 - GET
-    - [x] Delete cart: http://localhost:5000/api/cart - DELETE
+  - [x] Read all: https://mernproject-app.herokuapp.com/api/cart - GET
+    - [x] Read details: https://mernproject-app.herokuapp.com/api/cart/605646eb4a739473ecb699d9 - GET
+    - [x] Delete cart: https://mernproject-app.herokuapp.com/api/cart - DELETE
         -> header : x-auth-token ; body { "id":"60600cc045b48321cc9049d4"}
-    - [x] Update cart: http://localhost:5000/api/cart- PUT
+    - [x] Update cart: https://mernproject-app.herokuapp.com/api/cart- PUT
         ->header : x-auth-token ; body 
         {
             "id": "607263621ed14e4bb06bf306",
@@ -115,7 +115,7 @@ ID values provided as an example. To execute those APIS first insert a cart, inv
                 "totalPrice": "123.35"
             }
 
-    - [x] Insert cart: http://localhost:5000/api/cart - POST
+    - [x] Insert cart: https://mernproject-app.herokuapp.com/api/cart - POST
         ->header : x-auth-token ; body 
         {
             "user": "60542a351d57483cb8c8a309",
@@ -144,29 +144,28 @@ ID values provided as an example. To execute those APIS first insert a cart, inv
         }
 
   - [x] 2. Menu API created to handle CRUD menu actions.
-    - [x] Read all: http://localhost:5000/api/menu - GET
-    - [x] Read details: http://localhost:5000/api/menu/605539452cab7f618078d7a9 - GET
-    - [x] Delete menu item: http://localhost:5000/api/menu - DELETE
+    - [x] Read all: https://mernproject-app.herokuapp.com/api/menu - GET
+    - [x] Read details: https://mernproject-app.herokuapp.com/api/menu/605539452cab7f618078d7a9 - GET
+    - [x] Delete menu item: https://mernproject-app.herokuapp.com/api/menu - DELETE
         -> header : x-auth-token ; body { "id":"60600cc045b48321cc9049d4"}
-    - [x] Update menu item : http://localhost:5000/api/menu- PUT
+    - [x] Update menu item : https://mernproject-app.herokuapp.com/api/menu- PUT
         ->header : x-auth-token ; body {"id": "60553a4f2cab7f618078d7b5","name": "Carrot Cake","description": "None","category": "deserts","price": "6.45","img": "None","ingredients": "Carrot Cake(1)"}
-    - [x] Insert menu item: http://localhost:5000/api/menu - POST
+    - [x] Insert menu item: https://mernproject-app.herokuapp.com/api/menu - POST
         ->header : x-auth-token ; body {"name": "Chocolate Milkshake","price": "6.25","category": "drinks","description": "None","img": "None","ingredients": "Chocolate Milkshake(1)"}
 
 - [x] Inventory Module: 
  - [x] 1. Inventory API created to handle Inventoru CRUD actions.
-    - [x] Read all: http://localhost:5000/api/inventory - GET
-    - [x] Read details: http://localhost:5000/api/inventory/60600cc045b48321cc9049d4 - GET
-    - [x] Delete inventory item: http://localhost:5000/api/inventory - DELETE
+    - [x] Read all: https://mernproject-app.herokuapp.com/api/inventory - GET
+    - [x] Read details: https://mernproject-app.herokuapp.com/api/inventory/60600cc045b48321cc9049d4 - GET
+    - [x] Delete inventory item: https://mernproject-app.herokuapp.com/api/inventory - DELETE
         -> header : x-auth-token ; body { "id":"60600cc045b48321cc9049d4"}
-    - [x] Update Inventory item : http://localhost:5000/api/inventory - PUT
+    - [x] Update Inventory item : https://mernproject-app.herokuapp.com/api/inventory - PUT
         ->header : x-auth-token ; body {"id": "606179e52c24193ce4595e72","name": "Beyond Meat","quantity": "10","status": "Available"}
-    - [x] Insert Inventory item: http://localhost:5000/api/inventory - POST
+    - [x] Insert Inventory item: https://mernproject-app.herokuapp.com/api/inventory - POST
         ->header : x-auth-token ; body {"name": "Banana Split","quantity": "50","status": "Available"}
 
 ## Learning Curve and challengers
 Creating the cart API and its front-end was a challenge for this project. Merging the server side was also a challenge due to the differences in middleware and user models.
-
 
 #
 ##  Name : Navdeep Singh
@@ -185,6 +184,14 @@ Creating the cart API and its front-end was a challenge for this project. Mergin
 ## Tasks
 - [x] Created Home page for the project.
 - [x] Created a page named About us where the information about the restaurant has been provided.
+- [x] Created a checkout page for payments.
+
+ Routes used for user access:
+   -> http://localhost:5000/resturant/checkout
+   
+   -> http://localhost:5000//resturant/home
+
+   -> http://localhost:5000//resturant/about
 
 #
 ##  Name : Lovish Gulati

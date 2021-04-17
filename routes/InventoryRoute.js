@@ -29,9 +29,10 @@ router.get('/:id', async (req, res) => {
 });
 
 /* Crud: Insert item to inventory */
+
 router.post(
   '/',
-   auth,
+   //auth,
   [
     check('name', 'Name is required').not().isEmpty(),
     check('quantity', 'Quantity is required').not().isEmpty(),
@@ -60,7 +61,7 @@ router.post(
 
 /* Crud: Delete item from inventory */
 router.delete('/',
-auth,
+//auth,
 async (req, res) => {
     try {
       const item = await Inventory.findById(req.body.id);
@@ -76,7 +77,7 @@ async (req, res) => {
 
 /* Crud: Update item on inventory */
 router.put('/',
-auth,
+//auth,
  async (req, res) => {
     try {
       const item = await Inventory.findById(req.body.id);
