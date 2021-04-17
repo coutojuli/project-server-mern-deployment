@@ -43,7 +43,7 @@ router.post(
         return res.status(422).json({ errors: errors.array() });
       }
       const newCart = new Cart({
-        user: req.body.user,
+        //user: req.body.user,
         items: req.body.items,
         totalPrice: req.body.totalPrice
       });
@@ -82,7 +82,7 @@ auth,
       if (!cart) {
         return res.status(404).json({ msg: 'Cart not found' });
       }
-      cart.user = req.body.user;
+      //cart.user = req.body.user;
       cart.items = [...req.body.items];
       cart.totalPrice = req.body.totalPrice;
 

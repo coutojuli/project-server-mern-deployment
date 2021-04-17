@@ -89,8 +89,7 @@ ID values provided as an example. To execute those APIS first insert a cart, inv
     - [x] Update cart: https://mernproject-app.herokuapp.com/api/cart- PUT
         ->header : x-auth-token ; body 
         {
-            "id": "607263621ed14e4bb06bf306",
-            "user": "60542a351d57483cb8c8a309",
+            "id": "607263621ed14e4bb06bf306",            
             "items": [{
                     "item" : "Eggs Benedict",
                     "quantity" : "5",
@@ -118,7 +117,6 @@ ID values provided as an example. To execute those APIS first insert a cart, inv
     - [x] Insert cart: https://mernproject-app.herokuapp.com/api/cart - POST
         ->header : x-auth-token ; body 
         {
-            "user": "60542a351d57483cb8c8a309",
             "items": [{
                     "item" : "Eggs Benedict",
                     "quantity" : "5",
