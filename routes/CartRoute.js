@@ -31,7 +31,7 @@ router.get('/:id', async (req, res) => {
 /* Crud: Insert cart to db */
 router.post(
   '/',
-   //auth,
+   auth,
   [
     check('items', 'Items are required').not().isEmpty(),
     check('totalPrice', 'Total price is required').not().isEmpty(),
@@ -58,7 +58,7 @@ router.post(
 
 /* Crud: Delete cart from db */
 router.delete('/',
-//auth,
+auth,
 async (req, res) => {
     try {
       const cart = await Cart.findById(req.body.id);
@@ -75,7 +75,7 @@ async (req, res) => {
 
 /* Crud: Update cart on db */
 router.put('/',
-//auth,
+auth,
  async (req, res) => {
     try {
       const cart = await Cart.findById(req.body.id);

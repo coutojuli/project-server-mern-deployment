@@ -31,7 +31,7 @@ router.get('/:id', async (req, res) => {
 /* Crud: Insert menu item to db */
 router.post(
   '/',
-   //auth,
+   auth,
   [
     check('name', 'Name is required').not().isEmpty(),
     check('description', 'Description is required').not().isEmpty(),
@@ -66,7 +66,7 @@ router.post(
 
 /* Crud: Delete menu item from db */
 router.delete('/',
-//auth,
+auth,
  async (req, res) => {
     try {
     const menuItem = await Menu.findById(req.body.id);
@@ -83,7 +83,7 @@ router.delete('/',
 
 /* Crud: Update food item on db */
 router.put('/',
-//auth,
+auth,
  async (req, res) => {
     try {
     const menuItem = await Menu.findById(req.body.id);
