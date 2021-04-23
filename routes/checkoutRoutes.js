@@ -7,7 +7,7 @@ const auth = require('../middleware/auth');
 
 
 
-router.get('/',  async (req, res) => {
+router.get('/', auth, async (req, res) => {
     try {
         const checkoutDB = await Checkout.find();
         res.send(checkoutDB);
@@ -29,9 +29,13 @@ router.get('/:id', auth, async (req, res) => {
 });
 
 router.post('/',
-   // auth,
+    auth,
     [        
-        check('userName', 'userName is required').not().isEmpty()
+        check('userName', 'userName is required').not().isEmpty(),
+        check('cvc', 'cvc must be 3 characters').isLength({
+            min: 3,
+            max: 3
+        }),
     ],
     async (req, res) => {
         try {
@@ -42,7 +46,10 @@ router.post('/',
             }
             const newCheckout = new Checkout({
                 userName: req.body.userName,
-                amount: req.body.amount
+                amount: req.body.amount,
+                cc_no: req.body.cc_no,
+                cvc: req.body.cvc,
+                exp_date: req.body.exp_date
             });
             const result = await newCheckout.save();
             res.send(result);

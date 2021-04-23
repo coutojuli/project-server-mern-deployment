@@ -45,12 +45,11 @@ try {
                     httpOnly:true
                 });
         
-        // Login Success Respone with Token 
-        res.status(200).json({message:"Login Successfull", token:newToken});
 
-        
+        res.status(200).json({message:"Login Successfull"});
+        // return res.header({'login-token':newToken}).send(newToken);          
     } catch (error) {
-        res.status(400).json({messgae:error.message});
+        res.status(400).json({messgae:console.log(error)});
         }
 });
 

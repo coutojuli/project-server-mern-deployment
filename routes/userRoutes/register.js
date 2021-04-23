@@ -58,7 +58,7 @@ routes.post('/register', async (req,res)=>{
             return res.status(422).json({message: "Not Registered" });
             }
      } catch (error){ 
-            res.status(400).json({message:error.message});
+            res.status(400).json({message:console.log(error)});
         }
 });
 

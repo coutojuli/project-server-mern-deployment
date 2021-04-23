@@ -8,7 +8,7 @@ let Reserve = require('../model/Reserve');
 const router = express.Router();
 
 router.get('/', 
-//  auth, 
+ auth, 
 async (req, res) => {
     try {
         const reserves = await Reserve.find();
@@ -19,7 +19,7 @@ async (req, res) => {
 });
 
 router.get('/:id',
-//  auth, 
+ auth, 
 async (req, res) => {
     try {
         const reserve = await Reserve.findById(req.params.id);
@@ -36,7 +36,7 @@ async (req, res) => {
 
 router.post(
     '/',
-    //  auth,
+     auth,
     [
         check('date', 'Date is required').not().isEmpty(),
     check('stime', 'Start time is required').not().isEmpty(),
@@ -54,7 +54,8 @@ router.post(
           date: req.body.date,
           stime: req.body.stime,
           etime: req.body.etime,
-          tableno: req.body.tableno
+          tableno: req.body.tableno,
+          message: req.body.message,
         });
   
         const result = await newReserve.save();
@@ -68,7 +69,7 @@ router.post(
 
 
 router.delete('/', 
-//  auth, 
+ auth, 
 async (req, res) => {
     try {
         const reserve = await Reserve.findById(req.body.id);
@@ -86,7 +87,7 @@ async (req, res) => {
 });
 
 router.put('/', 
-//  auth, 
+ auth, 
     [
     check('date', 'Date is required').not().isEmpty(),
     check('stime', 'Start time is required').not().isEmpty(),
