@@ -21,7 +21,7 @@ routes.post('/edit-profile',middle, async (req,res) =>{
         
                         const {error} = validationRegister(req.body);    
                         if(error){
-                            return  res.status(422).send(error.details[0].message )
+                            return  res.status(422).json({message:error.details[0].message })
                             }
 
                                 // Hash Password 
@@ -43,19 +43,19 @@ routes.post('/edit-profile',middle, async (req,res) =>{
 
                                 try {
                                     userDetails.save();
-                                  return  res.status(200).send( "Profile updated Succesfully" );                                    
+                                  return  res.status(200).json({message: "Profile updated Succesfully" });                                    
                                 } catch (error) {
-                                  return  res.status(422).send( error.message );                                                                        
+                                  return  res.status(422).json({message: error.message} );                                                                        
                                 }
 
 
                       } else{
-                          return res.status(422).send("Profile is not updated. Try Again" );
+                          return res.status(422).json({message:"Profile is not updated. Try Again" });
                     }
             }else
-                { return  res.status(422).send('Something went wrong. Try Login Again.!') };
+                { return  res.status(422).json({message:'Something went wrong. Try Login Again.!'}) };
         }catch(err)
-            { return  res.status(422).send(err.message); }
+            { return  res.status(422).json({message:err.message}); }
 
 
     });

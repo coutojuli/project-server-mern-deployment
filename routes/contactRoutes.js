@@ -8,7 +8,7 @@ let Contact = require('../model/Contact');
 const router = express.Router();
 
 router.get('/', 
- auth, 
+// auth, 
 async (req, res) => {
     try {
         const contacts = await Contact.find();
@@ -20,7 +20,7 @@ async (req, res) => {
 
 
 router.get('/:id',
- auth, 
+// auth, 
 async (req, res) => {
     try {
         const contact = await Contact.findById(req.params.id);
@@ -36,7 +36,6 @@ async (req, res) => {
 
 router.post(
     '/',
-     auth,
     [
       check('firstname', 'First Name is required').not().isEmpty(),
       check('lastname', 'Last Name is required').not().isEmpty(),
@@ -71,7 +70,7 @@ router.post(
 
 
 router.delete('/', 
- auth, 
+// auth, 
 async (req, res) => {
     try {
         const contact = await Contact.findById(req.body.id);
@@ -89,7 +88,7 @@ async (req, res) => {
 });
 
 router.put('/', 
- auth, 
+// auth, 
     [
     check('firstname', 'First Name is required').not().isEmpty(),
     check('lastname', 'Last Name is required').not().isEmpty(),

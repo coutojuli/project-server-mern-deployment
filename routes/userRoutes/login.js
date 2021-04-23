@@ -53,10 +53,12 @@ try {
             expires: new Date(Date.now + 25892000),
             httpOnly:true
         });
-            res.status(200).json({message:"Login Successfull"});
-        // return res.header({'login-token':newToken}).json({token:newToken});          
+       
+        // Login Success Respone with Token 
+        res.status(200).json({message:"Login Successfull", token:newToken});
+        
     } catch (error) {
-        res.status(400).json({message:console.log(error)});
+        res.status(400).json({message:error.message});
         }
 });
 

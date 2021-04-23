@@ -8,16 +8,7 @@ const CheckoutSchema = new mongoose.Schema({
     },
     amount: {
         type: Number,
-    },
-    cc_no: {
-        type: Number,
-    },
-    cvc: {
-        type: Number,
-    },
-    exp_date: {
-        type: String,
-    },
+    }
 });
 
 module.exports = mongoose.model('Checkout', CheckoutSchema);

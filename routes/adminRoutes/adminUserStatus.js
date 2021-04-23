@@ -7,17 +7,15 @@ routes.post('/status', middle,async (req,res)=>{
 
     const {email} =req.body;
 
-    console.log(email)
-
     if(!email)
-    {  req.status(422).send("Email is requried"); }
+    {  req.status(422).json({message : "Email is requried"}); }
 
    const userDetails  = await User.findOne({email});
 
    if(!userDetails)
-   {  return res.status(400).send('Email does not match with records. Try again.');  }
+   {  return res.status(400).json({message : 'Email does not match with records. Try again.'});  }
 
-   return res.send("email:"+ userDetails.email +",status:"+userDetails.status +",name:"+userDetails.name);
+   return res.json({message : "Results found",info: "email:"+ userDetails.email +",status:"+userDetails.status +",name:"+userDetails.name});
 
    
 
@@ -29,7 +27,7 @@ routes.post('/status', middle,async (req,res)=>{
     //       console.log(user.email + " _" + user.answer + "_" + user.status)
     //     });
     
-    //     // res.send(userMap);  
+    //     // res.json({message : userMap);  
       // });
 });
 

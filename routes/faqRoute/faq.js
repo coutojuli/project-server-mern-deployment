@@ -36,20 +36,20 @@ routes.post("/faq", middle, async (req, res) => {
                 
                     try{
                         faqDetails.save();
-                        return res.status(200).send("Question Posted" + results);
+                        return res.status(200).json({message:"Question Posted" + results});
 
                     } catch(err)
                     {
-                        res.status(400).send(err.message);
+                        res.status(400).json({message:err.message});
                     }               
                 } else {
-                    res.status(400).send(results);
+                    res.status(400).json({message:results});
                 }
             } else {
-                res.status(400).send("Login Again");
+                res.status(400).json({message:"Login Again"});
                 }
          } catch (err) {
-            res.status(400).send(err.message);
+            res.status(400).json({message:err.message});
     }
   });
 
